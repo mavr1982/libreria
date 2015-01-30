@@ -41,13 +41,23 @@ else
 	$mail=$_POST['mail'];
 	$subject= "Usuario registrado";
 	$message= "Se ha registrado como cliente en nuestra base de datos.";
+	$comp="select usuario from usuarios where usuario='$user'";
+	$comprobacion=mysqli_query($con, $comp);
+	if (mysqli_num_rows($comprobacion)>0)
+	{
+		echo "Nombre de usuario no disponible, introduzca otro distinto.";
+		echo "<p>Volver a pantalla de registro...";
+		echo "<a href='registro.php'><input type='button' value='Registrese'></a></p>";
+	}
+	else 
+	{
 	$sql="insert into usuarios (usuario, password, email)" . "values ('$user', '$pass', '$mail')";
 	$resultado= mysqli_query($con, $sql);
 	mail($mail, $subject, $message);
 	echo "Nuevo registro introducido.<br><br>";
 	echo "<a href='login.php'>Identifiquese para iniciar su compra.</a></br></br>";
-	
 	mysqli_close($con);
+	}
 }
 }
 ?>
