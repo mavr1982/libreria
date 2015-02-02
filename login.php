@@ -15,10 +15,8 @@ else
 <TITLE>Libreria ASIR2</TITLE>
 </head>
 <body>
-
 <h1>Valídese para poder iniciar su compra</h1>
 <?php 
-
 if ((empty($_POST)) || (!isset($_POST)))
 {
 ?>
