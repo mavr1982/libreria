@@ -1,58 +1,88 @@
 @CHARSET "ISO-8859-1";
 
-img {
-   width: 100%;
-}
-#menu {
-list-style-type: none;
-margin-left: auto;
-margin-right: auto;
-height: 50px;
-}
-
-#menu li {
-position: relative;
-float: left;
-background-color: #93a613;
+.menu{
+    /*Bordes redondeados*/
+    -webkit-border-radius:10px;/*Para chrome y Safari*/
+    border-radius:10px;/*El estandar por defecto*/
+     /*Degradados*/
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#8080ff), to(#8080ff));/*Para chrome y Safari*/
+    background-image: linear-gradient(top, #8080ff, #8080ff);/*El estandar por defecto*/
+    overflow:hidden;
+    padding:10px;
+    width:95%;
 }
 
-#menu li a {
-padding: 6px;
-border-right-width: 1px;
-border-right-style: solid;
-border-right-color: #666;
-color: #f5f9de;
-text-decoration: none;
-display: block;
-}
-/*es para el submenu del despegable*/
-#menu li a:hover {
-background-color: #93a613;
+.menu{/*Estilo para el despegable*/
+    list-style:none;
+    margin:0 10px 0 10px;
+    padding:0;
 }
 
-#menu ul {
-position: absolute;
-z-index: 99999;
-display: none;
-list-style-type: none;
-list-style: none;
-margin: 0;
-padding: 0;
-width:90px;
+.menu > li{
+    /*Bordes redondeados*/
+    -webkit-border-radius:5px;/*Chrome y Safari*/
+    border-radius:5px;/*Estandar por defecto*/
+    float:left;
+    font-family:Helvetica;
+    font-size:16px;
+    font-weight:bold;
+    margin-right:10px;
+    text-align:center;
 }
 
-#menu ul li a {
-background-color: #cbdd54;
-border-bottom-width: 1px;
-border-right-style: none;
-border-bottom-style: solid;
-border-bottom-color: #BEC1DA;
+
+.menu li:hover{  /*:Hover es para cuando pasas el puntero realice un efecto*/
+    /*Degradado de fondo*/
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#8080ff), to( #8080ff));/*Chrome y Safari*/
+    background-image: linear-gradient(top, #8080ff, #8080ff);/*Estandar por defecto*/
+    /*Sombras*/
+    -webkit-box-shadow:  1px -1px 0px #8080ff;/*Chrome y Safari*/
+    box-shadow:  1px -1px 0px #8080ff;/*Estandar por defecto*/
+    border:1px solid #8080ff;
 }
 
-#menu ul li a:hover {
-background-color: #93a613;
+.menu li a{
+    color:#000000;
+    display:block;
+    padding:10px;
+    text-decoration:none;
+    /*Transiciones*/
+    -webkit-transition: 0.4s linear all;
+    transition: 0.4s linear all;
 }
 
-#menu li:hover > ul{
-display: block;
+nav ul li a:hover{
+    color:#000000;
+}
+
+.menu li ul { /*para que los submenu se oculten*/
+	display:none;
+	position:absolute;
+	min-width:140px;
+}
+
+.menu li:hover > ul { /*para que se vea el submenu oculto*/
+	list-style:none;
+	display:block;
+	position:absolute;
+}
+
+.menu li:hover > ul {
+    color:#000000;
+    display:block;
+    padding:10px;
+    text-decoration:none;
+    /*Transiciones*/
+    -webkit-transition: 0.4s linear all;
+    transition: 0.4s linear all;
+    /*Degradado de fondo*/
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#FFF), to( #E3E3E3));/*Chrome y Safari*/
+    background-image: linear-gradient(top, #FFF, #E3E3E3);/*Estandar por defecto*/
+    /*Sombras*/
+    -webkit-box-shadow:  1px -1px 0px #8080ff;/*Chrome y Safari*/
+    box-shadow:  1px -1px 0px #000000;/*Estandar por defecto*/
+    border:1px solid #8080ff;
+     /*Bordes redondeados*/
+    -webkit-border-radius:5px;/*Chrome y Safari*/
+    border-radius:5px;/*Estandar por defecto*/
 }
